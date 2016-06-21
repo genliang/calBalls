@@ -1,4 +1,5 @@
 {
   "name": "calBalls",
-  "app_id": ""
+  "app_id": "",
+  "defaultBrowser": "firefox"
 }
