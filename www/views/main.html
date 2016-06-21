@@ -1,0 +1,14 @@
+<ion-pane ng-controller="Calculator">
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Calculate number of balls</h1>
+  </ion-header-bar>
+  <ion-content>
+    <label class="item item-input">
+      <span class="input-label">Number of people</span>
+      <input type="text" ng-model="numPeople">
+    </label>
+    <button class="button button-block button-positive" ng-click="startAlgo(numPeople)">
+          Send
+    </button>
+  </ion-content>
+</ion-pane>

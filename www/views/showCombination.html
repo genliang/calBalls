@@ -1,0 +1,20 @@
+<ion-pane ng-controller="Calculator">
+  <ion-header-bar>
+  	<h1 class="title">Combinations</h1>
+  </ion-header-bar>
+  <ion-content>
+  <div class="list">
+    <div class="row">
+	  	<div class="col col-25">Red</div>
+	  	<div class="col col-25">Green</div>
+	  	<div class="col col-25">Blue</div>
+	</div>
+	<div class="row" ng-repeat="items in finalTen">
+	  <div class="col col-25" ng-repeat="item in items">
+	  	<a class="item">{{item}}</a>
+	  </div>
+
+	</div>
+  </div>
+  </ion-content>
+</ion-pane>
