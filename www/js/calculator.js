@@ -1,18 +1,13 @@
-app.controller('Calculator', ['$scope', '$state', function($scope, $state){
+app.controller('Calculator', ['$scope', '$state', 'Storage', function($scope, $state, Storage){
 	console.log('Start calculator algo!');
 	//$scope.s = [1, 2, 4, 5, 3];
 	var numP = 0;
-	this.buf = [];
+	var buf = [];
 	$scope.s = [1, 2, 3];
 	$scope.startAlgo = function(num){
 		numP = num;
 		algoS(num);
-		if (this.buf[0]> 0){
-		  $state.go('showCombination');
-		}
-		else{
-			console.log('noooo');
-		}
+		
 		
 	};
 
@@ -27,16 +22,19 @@ app.controller('Calculator', ['$scope', '$state', function($scope, $state){
 		//$scope.finalTen = [];
 		  for(var i = 0; i < 2; i++){
 			//random twice, the remaining would be the last value
-			this.buf[i] = Math.floor((Math.random() * max) + min);
-			max = max - this.buf[i];
-			total = total + this.buf[i];
-			console.log(this.buf[i]);
+			buf[i] = Math.floor((Math.random() * max) + min);
+			max = max - buf[i];
+			total = total + buf[i];
+			console.log(buf[i]);
 			console.log('Total: ' + total);
 		  }
 	    console.log(total);
-	    this.buf[2] = num - total;
-	    console.log('Final buf: ' + this.buf);
+	    buf[2] = num - total;
+	    console.log('Final buf: ' + buf);
 	    console.log('Done');
+	    Storage.sendItems(buf);
+	    console.log('Items send!');
+	    $state.go('showCombination');
 	    //$scope.finalTen.push(buf);
 		//console.log($scope.finalTen);
 		//$scope.s[3] = 22;

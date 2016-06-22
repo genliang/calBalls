@@ -34,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('showCombination',{
       url: '/showCombination',
       templateUrl: 'views/showCombination.html',
-      controller: 'Calculator'
+      controller: 'Display'
     })
 });
 
@@ -45,3 +45,18 @@ app.config(function($stateProvider, $urlRouterProvider){
     console.log($scope.numPeople);
   };
 });*/
+
+app.factory('Storage', function(){
+  var buf;
+  return {
+    sendItems: function(items){
+      console.log("Items received!");
+      buf = items.slice();
+      console.log(buf);
+    },
+
+    getItems: function(){
+      return buf;
+    }
+  }
+});
