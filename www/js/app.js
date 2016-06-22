@@ -47,7 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 });*/
 
 app.factory('Storage', function(){
-  var buf;
+  var buf = [];
   return {
     sendItems: function(items){
       console.log("Items received!");
@@ -57,6 +57,13 @@ app.factory('Storage', function(){
 
     getItems: function(){
       return buf;
+    },
+
+    clearItems: function(){
+      console.log("Clear Items in storage!");
+      buf.length = 0;
+      console.log(buf);
+      
     }
   }
 });

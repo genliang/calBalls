@@ -8,9 +8,9 @@
 	  	<div class="col col-25">Green</div>
 	  	<div class="col col-25">Blue</div>
 	</div>
-	<div class="row">
-	  <div class="col col-25" ng-repeat="item in items track by $index">
-	  	<li>{{item}}</li>
+	<div class="row" ng-repeat="item in items track by $index">
+	  <div class="col col-25" ng-repeat="value in item track by $index">
+	  {{value}}
 	  </div>
 
 	</div>
